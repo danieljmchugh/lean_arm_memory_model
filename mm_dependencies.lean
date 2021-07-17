@@ -3,8 +3,6 @@ import mm_basic_defs
 
 /- ######################## Dependency definitions ######################## -/
 
-def wf_dependency_through_registers (dtr : event → event → Prop) : Prop := sorry
-
 def address_dependency (dtr : event → event → Prop) : event → event → Prop := 
   λ r₁ e₂, is_read r₁ ∧ in_program_order r₁ e₂ ∧ dtr r₁ e₂
 
